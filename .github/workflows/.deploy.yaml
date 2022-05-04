@@ -10,15 +10,15 @@ jobs:
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY }}
-        heroku_app_name: "apipokemonpt04"
+        heroku_app_name: "apipokemonlarsen"
         heroku_email: ${{secrets.HEROKU_API_KEY }}
       env:
         HD_APP_BASE: "api"    
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY }}
-        heroku_app_name: "clientpokemonpt04"
+        heroku_app_name: "clientpokemonlarsen"
         heroku_email: ${{secrets.HEROKU_API_KEY }}
       env:
         HD_APP_BASE: "client"
-        HD_REACT_APP_API_URL: "https://apipokemonpt04.herokuapp.com"
+        HD_REACT_APP_API_URL: "https://apipokemonlarsen.herokuapp.com"
