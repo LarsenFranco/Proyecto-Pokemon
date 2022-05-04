@@ -3,7 +3,7 @@
 </p>
 
 # Individual Project - Henry Pokemon
-## DEPLOY: https://clientpokemonpt04.herokuapp.com/home
+## DEPLOY: https://clientpokemonlarsen.herokuapp.com/home
 <p align="left">
   <img height="150" src="./pokemon.png" />
 </p>
