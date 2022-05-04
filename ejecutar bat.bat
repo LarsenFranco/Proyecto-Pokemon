@@ -1,4 +1,4 @@
-@echo "Iniciando servidores"
+@echo "Iniciando seervidores"
 cd client
 start PowerShell.exe -Command "npm start"
 cd ..
