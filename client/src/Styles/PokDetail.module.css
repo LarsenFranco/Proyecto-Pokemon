@@ -73,7 +73,8 @@
   background-color: #e73f3c;
 }
 .barComplete {
-
+  display: flex;
+  flex-direction: column-reverse;
   position: absolute;
   bottom: 0;
   overflow: hidden;
