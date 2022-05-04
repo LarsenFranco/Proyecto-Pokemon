@@ -1,0 +1,119 @@
+.container{
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    background-color:#FFD823;
+    z-index: 0;
+    border-radius: 100px;
+    margin: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  align-items: center;
+    padding-right: 2rem;
+}
+
+
+.buttonHome {
+    background: none;
+    border: 0;
+    color: inherit;
+    overflow: visible;
+}
+
+
+.buttonHome img{
+ 
+    border: 0;
+    margin-left: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+   
+}
+
+.buttonHome img:hover{
+    transform: scale(1.7);
+    cursor: pointer;
+}
+
+
+
+/* SEARCH INPUT */
+
+
+.searchBox{ 
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+  }
+  .inputSearch{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: transparent;
+    padding-right: 40px;
+    color:rgb(0, 0, 0);
+  }
+  .inputSearch::placeholder{
+    color:rgba(0, 0, 0, 0.863);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 400;
+  }
+  .btnSearch{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color:#000000 ;
+    background-color:transparent;
+    pointer-events: painted;  
+  }
+.btnSearch img{
+  border: 0;
+  margin-left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+
+  .btnSearch:focus ~ .inputSearch{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(0, 0, 0, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .inputSearch:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(0, 0, 0, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+
+  .container a{
+    font-size: 2rem;
+    text-decoration:none;
+  }
+  .container a img{
+    border: 0;
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .container a img:hover{
+    transform: scale(1.7);
+    cursor: pointer;
+  }

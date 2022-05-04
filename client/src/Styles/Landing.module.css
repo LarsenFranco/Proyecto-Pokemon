@@ -1,0 +1,23 @@
+.container{
+    background-color: yellow;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    font-family: monospace;
+}
+.containerButton img{
+    width: 20rem;
+}
+.containerButton img:hover{
+    cursor: pointer;
+    transition: all 200ms ease-in;
+    transform: scaleY(1.1);
+    
+}
+
+.title{
+    font-size: 3rem;
+}

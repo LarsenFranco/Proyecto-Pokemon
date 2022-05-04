@@ -1,0 +1,28 @@
+.btns{
+    text-decoration: none;
+    background-color:#ffd823;
+    font-size: 1rem;
+    width: 80px;
+    margin-left:0.2rem;
+    border-radius:10px;
+    cursor:pointer;
+    margin: 1rem;
+    font-family: monospace;
+    transition: 0.5s ease;
+}
+
+.botonera{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+.btns:hover{
+    background-color:black;
+    color:#ffd823
+}
+
+.active{
+    background-color:black;
+    color:#ffd823
+    
+}
