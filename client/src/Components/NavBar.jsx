@@ -105,10 +105,7 @@ function NavBar(props) {
         <button onClick={goHome} className={Style.buttonHome}>
           <img src={icono} alt="Home button" />
         </button>  
-        
-        
-        {/* <div className={Style.subContainer} > */}
-
+      
         <Selects
         options={["Ascendiente", "Descendiente"]}
         action={ordenAlf}
