@@ -52,7 +52,9 @@ function Home() {
         <div className={container}>
           {pokemonStore ? (
             pokemonStore.pokemon ? (
+              <div className={grid}>
               <PokCard props={pokemonStore.pokemon} />
+              </div>
             ) : (
               <>
                 <Pagination
