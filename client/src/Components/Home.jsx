@@ -60,7 +60,7 @@ function Home() {
                 <Pagination
                   currentPage={currentPage}
                   postsPerPage={postsPerPage}
-                  totalPokemons={pokemonStore.allPokemons.length}
+                  totalPokemons={pokemonStore.pokemons.length}
                   paginate={paginate}
                 />
                 <div className={grid}>

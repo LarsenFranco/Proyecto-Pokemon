@@ -13,6 +13,9 @@
   max-height: 30rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
   overflow: auto;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .left {
@@ -118,4 +121,13 @@
   font-family:Verdana, sans-serif;
   padding:10px;
   text-transform: uppercase;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
 }

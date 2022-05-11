@@ -1,6 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
+  animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .grid {
@@ -13,4 +16,14 @@
 }
 .item {
     max-height: 15rem;
+}
+
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
 }

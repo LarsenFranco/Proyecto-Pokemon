@@ -99,9 +99,9 @@ function NavBar(props) {
     return
   }
 
-
+  // style={ visible ? null : {display: "none"} }
   return (
-    <div className={Style.container}   style={ visible ? null : {display: "none"} } >           
+    <div className={Style.container}   >           
         <button onClick={goHome} className={Style.buttonHome}>
           <img src={icono} alt="Home button" />
         </button>  
@@ -134,11 +134,7 @@ function NavBar(props) {
           title={"Tipos"}
           />
       }
-     
-         
-    
-  
-    
+              
       <form onSubmit={handleSubmit}>
         <div className={Style.searchBox}>
         <button className={Style.btnSearch}>
