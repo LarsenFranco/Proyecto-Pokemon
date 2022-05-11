@@ -129,7 +129,7 @@ function CreatePok() {
         </div>
 
         <div className={Style.body}>
-          {/* //! ESTADÍSTICAS */}
+         
           <div className={Style.stats}>
             <div className={Style.ranges}>
               <p>Altura: </p>

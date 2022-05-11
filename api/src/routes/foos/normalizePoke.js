@@ -2,8 +2,7 @@ const axios = require('axios');
 
 async function normalize (pokemon) {
     let newTypes=[];
-    // console.log("normalize dice"+pokemon.data.name)
-
+   
     newTypes=pokemon.data.types.map((t)=>{
         return axios(t.type.url)
         .then((type)=>{
@@ -29,7 +28,8 @@ async function normalize (pokemon) {
         sprites: pokemon.data.sprites.other.dream_world.front_default,
         hp: pokemon.data.stats[0].base_stat,
         attack: pokemon.data.stats[1].base_stat,
-        defense: pokemon.data.stats[2].base_stat
+        defense: pokemon.data.stats[2].base_stat,
+        speed:  pokemon.data.stats[5].base_stat
     }
     return (normalPokemon)
 }

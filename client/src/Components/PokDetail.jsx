@@ -29,13 +29,8 @@ function PokDetail() {
       dispatch(clearPokemon());
     };
   }, [dispatch]);
-
   const pokemonStore = useSelector((initialState) => initialState);
-
   const pokemon = pokemonStore?.pokemon;
-
-  pokemon && console.log(pokemon);
-
   const spiner = pokemonStore?.spinner;
   return (
     <>
@@ -91,6 +86,21 @@ function PokDetail() {
                     <h2>{pokemon.defense}</h2>
                   </div>
                 </div>
+
+
+
+                <div className={stats}>
+                  <div>Velocidad:</div>
+                  <div className={barComplete}>
+                    <div
+                      className={subBar}
+                      style={{ height: `${pokemon.speed / 2}%` }}
+                    ></div>
+                    <h2>{pokemon.speed}</h2>
+                  </div>
+                </div>
+
+
               </div>
             </div>
 
