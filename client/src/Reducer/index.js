@@ -20,7 +20,7 @@ function rootReducer(state = initialState, action) {
     switch (action.type) {
         case actionTypes.GET_POKEMON_NAME:
             if (action.payload !== "error") return { ...state, pokemon: action.payload, spinner: false }
-            return { ...state, error: { msg: "No se encontró al pokemon buscado" } };
+            return { ...state, error: { msg: "No se encontró al pokemon buscado", fail:true } };
 
         case actionTypes.GET_POKEMON_ID:
             if (action.payload !== "error") state = { ...state, pokemon: action.payload, spinner: false }

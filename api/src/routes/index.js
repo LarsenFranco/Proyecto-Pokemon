@@ -12,9 +12,9 @@ const { normalize } = require("./foos/normalizePoke");
 const API_ROUTES = {
     API_ALL: 'https://pokeapi.co/api/v2/pokemon',
     API_ALL2: 'https://pokeapi.co/api/v2/pokemon?offset=20&limit=20',
-    API_ID: `https://pokeapi.co/api/v2/pokemon/`,   //recibe ID o NAME
-    API_NAME: `https://pokeapi.co/api/v2/pokemon/`,  //recibe ID o NAME
-    API_TYPE: `https://pokeapi.co/api/v2/type/`    //recibe ID o NAME
+    API_ID: `https://pokeapi.co/api/v2/pokemon/`,   
+    API_NAME: `https://pokeapi.co/api/v2/pokemon/`,  
+    API_TYPE: `https://pokeapi.co/api/v2/type/`   
 }
 
 router.get('/', (req, res) => {
