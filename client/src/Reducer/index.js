@@ -100,7 +100,7 @@ function rootReducer(state = initialState, action) {
             if(action.payload !== "error") {
                 return { ...state,  error: { msg: `Pokemon creado exitosamente`, fail:false }, spinner: false }; //,  error: { msg: `Pokemon creado correctamente`, fail:false}, spinner: false 
         }
-            return { ...state,  error: { msg: `No se pudo crear el pokemon` }, spinner: false, fail:true };
+            return { ...state,  error: { msg: `No se pudo crear el pokemon`, fail:true }, spinner: false};
 
         case actionTypes.SPINNER_STATUS:
             return { ...state, spinner: action.payload }
