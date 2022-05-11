@@ -7,8 +7,6 @@ const initialState = {
     types: [],
     spinner: true
 }
-
-
 function order(arr, prop) {
     let result = arr.sort(function (a, b) {
         if (a[prop] < b[prop]) { return -1; }
@@ -17,8 +15,6 @@ function order(arr, prop) {
     });
     return result
 }
-
-
 
 function rootReducer(state = initialState, action) {
     switch (action.type) {
@@ -38,9 +34,8 @@ function rootReducer(state = initialState, action) {
                     pokemons: action.payload
                     , spinner: false
                 }
-            else {
-              
-                return { ...state, error: { msg: "No se encontraron pokemones" } };
+            else {              
+                return { ...state, error: { msg: "No se encontraron pokemones", fail:true  } };
             }
         case actionTypes.GET_TYPES:
             return { ...state, types: action.payload }
@@ -50,7 +45,7 @@ function rootReducer(state = initialState, action) {
             if (resultDB.length > 0) {
                 return { ...state, pokemons: resultDB, spinner: false }
             } else {                           
-                return { ...state,  error: { msg: "No se encontraron pokemones" }, spinner: false };
+                return { ...state,  error: { msg: "No se encontraron pokemones", fail:true  }, spinner: false };
             }
 
 
@@ -98,12 +93,14 @@ function rootReducer(state = initialState, action) {
             if(result.length > 0 ){
                 return { ...state, pokemons: result, spinner: false }
             }else{
-                return { ...state,  error: { msg: `No se encontraron pokemones de tipo ${action.payload}` }, spinner: false };
+                return { ...state,  error: { msg: `No se encontraron pokemones de tipo ${action.payload}`, fail:true }, spinner: false };
             }
 
         case actionTypes.POST_POKEMON:
-            if(action.payload !== "error") return { ...state }
-            return { ...state,  error: { msg: `No se pudo crear el pokemon` }, spinner: false };
+            if(action.payload !== "error") {
+                return { ...state,  error: { msg: `Pokemon creado exitosamente`, fail:false }, spinner: false }; //,  error: { msg: `Pokemon creado correctamente`, fail:false}, spinner: false 
+        }
+            return { ...state,  error: { msg: `No se pudo crear el pokemon` }, spinner: false, fail:true };
 
         case actionTypes.SPINNER_STATUS:
             return { ...state, spinner: action.payload }

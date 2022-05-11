@@ -7,12 +7,12 @@ import { validator } from "../Utils/ValidateForms";
 import { useNavigate } from "react-router-dom";
 import { isObjEmpty } from "../Utils/isObjEmpty.js";
 import { randomCreate } from "../Utils/randomCreate.js";
+import Error from './Error'
 import { postNewPokemon, setSpinnerStatus } from "../Actions";
 import back from '../images/back.svg'
 function CreatePok() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const pokInitial = {
     types: [],
     name: "",
@@ -24,12 +24,12 @@ function CreatePok() {
     weight: 0,
     sprites: undefined,
   };
-
+  const [statusWindow , setStatusWindows] = useState(false)
   const [newPokemon, setNewPokemon] = useState(pokInitial);
   const [error, setError] = useState({});
   const [submit, setSubmit] = useState(false);
   const types = useSelector((state) => state.types);
-
+  const storeRedux = useSelector((state) => state);
   const imageValidate = (URL) => {
     const regex = new RegExp(/(https?:\/\/.*\.(?:png|jpg|gif))/);
     if (regex.test(URL)) return URL;
@@ -50,11 +50,10 @@ function CreatePok() {
     });
     dispatch(postNewPokemon(newPokemon));
     dispatch(setSpinnerStatus(true));
+    setStatusWindows(true)
     setNewPokemon(pokInitial);
-    navigate("/home");
-    return { mensaje: "creado" };
+    return;
   }
-
   const handleCheck = (e) => {
     if (e.target.checked) {
       setNewPokemon((prevState) => {
@@ -71,7 +70,6 @@ function CreatePok() {
       });
     }
   };
-
   useEffect(() => {
     if (
       newPokemon.name.length > 0 &&
@@ -86,9 +84,10 @@ function CreatePok() {
   }, [error, newPokemon, submit]);
 
   return (
+    statusWindow && storeRedux.error? <Error err={storeRedux.error} /> : 
     <div className={Style.container}>
       <button onClick={()=>{navigate('/home')} } className={Style.btnClose}>
-        <img src={back} alt="" />
+        <img src={back} alt="Volver a home" />
       </button>
       <div className={Style.imagenes}>
         <img className={Style.poks1} src={pokemons1} alt="Pokemons saludando" />

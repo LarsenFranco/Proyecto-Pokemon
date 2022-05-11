@@ -23,32 +23,24 @@ router.get('/', (req, res) => {
 
 //! Type
 router.get('/types', async (req, res) => {
-
     try {
         const typesInDB = await Type.findAll()
         return res.status(200).json(typesInDB)
     } catch (error) {
         return res.status(404).send("No se pudo leer la DB")
     }
-
 })
 
 //!Post new Pokemon
 router.post('/pokemons', async (req, res) => {
     let { name, hp, attack, defense, weight, speed, height, sprites, types } = req.body;
-
     if (!name) return res.status(404).send("Name is required");
-
     name = name.trim().toLowerCase();
-
     if (!types) {
         types = [1]
     };
-
      if (sprites === undefined || sprites.length < 8) { sprites = "https://i.postimg.cc/SRwC733h/pokese-al4-PNG.png" }
-
     let pokSeteado = asignaValores({ name, hp, attack, defense, weight, speed, height, sprites, types })
-
     try {
         const newPokemon = await Pokemon.create(pokSeteado)
         await newPokemon.addType(types);
@@ -70,8 +62,7 @@ router.get('/pokemons', async (req, res) => {
     let { API_ALL, API_NAME, API_ALL2 } = API_ROUTES
     let URLApi = API_ALL;
 
-    if (!name) {
-       
+    if (!name) {       
         try {
             poksFromDB = await Pokemon.findAll({
                 include: {

@@ -139,14 +139,12 @@ export function filterByType (type){
 export function postNewPokemon(poke){
   return async function (dispatch) {
     try {
-      const resp = await axios.post(`${API_URL}/pokemons`,poke);
-     
+      const resp = await axios.post(`${API_URL}/pokemons`,poke);     
       return dispatch({
         type: actionTypes.POST_POKEMON,
         payload: resp.data
       });
-    } catch (error) {
-      
+    } catch (error) {      
       return dispatch({
         type: actionTypes.POST_POKEMON,
         payload: "error"

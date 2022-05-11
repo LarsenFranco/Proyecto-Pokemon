@@ -17,7 +17,6 @@ function PokCard(props) {
   function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
   if(/[a-zA-Z]/.test(pok.id)){
     console.log(pok.id)
     idShort= idShort.slice(0, 4)
@@ -38,7 +37,6 @@ function PokCard(props) {
         </div>
 
         <div className={info}>
-          {/* <h2>Tipo de pokemon:</h2> */}
           <div className={types}>
             {pok.Types.map((t) => {
               return (

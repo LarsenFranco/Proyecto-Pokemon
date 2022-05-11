@@ -42,7 +42,6 @@ function Home() {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  const renderPokemons = () => {};
 
   return (
     <>
