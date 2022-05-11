@@ -14,7 +14,7 @@ import {
 import { useDispatch, useSelector }  from "react-redux";
 import Selects from "./Selects";
 import Style from "../Styles/NavBar.module.css";
-import icono from "../images/buttonHomeSVG.svg";
+import icono from "../images/buttonHome.png";
 import { Link, useNavigate } from "react-router-dom";
 import lupa from '../images/324654.png'
 import add from '../images/add.svg'
