@@ -87,8 +87,6 @@ function PokDetail() {
                   </div>
                 </div>
 
-
-
                 <div className={stats}>
                   <div>Velocidad:</div>
                   <div className={barComplete}>
